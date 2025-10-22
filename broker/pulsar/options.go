@@ -175,6 +175,8 @@ type autoDiscoveryPeriodKey struct{}
 type nackRedeliveryDelayKey struct{}
 type subscriptionRetryEnableKey struct{}
 type receiverQueueSizeKey struct{}
+type SubscriptionTypeKey struct{}
+
 
 // WithSubscriptionName ConsumerOptions.Name
 func WithSubscriptionName(name string) broker.SubscribeOption {
