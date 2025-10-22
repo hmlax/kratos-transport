@@ -1,8 +1,10 @@
 package pulsar
 
 import (
-	"github.com/tx7do/kratos-transport/broker"
 	"time"
+
+	"github.com/apache/pulsar-client-go/pulsar"
+	"github.com/tx7do/kratos-transport/broker"
 )
 
 ///
@@ -177,6 +179,9 @@ type subscriptionRetryEnableKey struct{}
 type receiverQueueSizeKey struct{}
 type SubscriptionTypeKey struct{}
 
+func WithSubscriptionType(subscriptionType pulsar.SubscriptionType) broker.SubscribeOption {
+	return broker.SubscribeContextWithValue(SubscriptionTypeKey{}, subscriptionType)
+}
 
 // WithSubscriptionName ConsumerOptions.Name
 func WithSubscriptionName(name string) broker.SubscribeOption {
