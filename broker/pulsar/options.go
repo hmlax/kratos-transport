@@ -177,10 +177,10 @@ type autoDiscoveryPeriodKey struct{}
 type nackRedeliveryDelayKey struct{}
 type subscriptionRetryEnableKey struct{}
 type receiverQueueSizeKey struct{}
-type SubscriptionTypeKey struct{}
+type subscriptionTypeKey struct{}
 
 func WithSubscriptionType(subscriptionType pulsar.SubscriptionType) broker.SubscribeOption {
-	return broker.SubscribeContextWithValue(SubscriptionTypeKey{}, subscriptionType)
+	return broker.SubscribeContextWithValue(subscriptionTypeKey{}, subscriptionType)
 }
 
 // WithSubscriptionName ConsumerOptions.Name

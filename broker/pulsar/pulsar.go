@@ -320,7 +320,7 @@ func (pb *pulsarBroker) Subscribe(topic string, handler broker.Handler, binder b
 	channel := make(chan pulsar.ConsumerMessage, 100)
 	pulsarOptions.MessageChannel = channel
 
-	if v, ok := options.Context.Value(SubscriptionTypeKey{}).(pulsar.SubscriptionType); ok {
+	if v, ok := options.Context.Value(subscriptionTypeKey{}).(pulsar.SubscriptionType); ok {
 		pulsarOptions.Type = v
 	}
 
